@@ -89,7 +89,6 @@ import mineverse.Aust1n46.chat.database.MySQL;
 import mineverse.Aust1n46.chat.database.PlayerData;
 import mineverse.Aust1n46.chat.gui.GuiSlotInfo;
 import mineverse.Aust1n46.chat.utilities.Format;
-import mineverse.Aust1n46.chat.versions.V1_8;
 import mineverse.Aust1n46.chat.versions.VersionHandler;
 
 import org.bukkit.Bukkit;
@@ -324,7 +323,7 @@ public class MineverseChat extends JavaPlugin implements PluginMessageListener {
 		try {
 			// if(VersionHandler.is1_7_9()) cmap = V1_7_9.v1_7_9();
 			// if(VersionHandler.is1_7_10()) cmap = V1_7_10.v1_7_10();
-			if(VersionHandler.is1_8()) cmap = V1_8.v1_8();
+			// if(VersionHandler.is1_8()) cmap = V1_8.v1_8();
 		}
 		catch(Exception e) {
 			e.printStackTrace();

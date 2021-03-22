@@ -37,7 +37,7 @@ public class Venturechat extends MineverseCommand {
 			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Click here to rank up!").create()));
 			message.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "Sample SpigotAPI Click Event"));
 			tcSpaces.addExtra(message);
-			player.spigot().sendMessage(tcSpaces);
+			player.sendMessage(String.valueOf(tcSpaces));
 			
 //			sendActionBar(player, "NMS ActionBar message");
 		}

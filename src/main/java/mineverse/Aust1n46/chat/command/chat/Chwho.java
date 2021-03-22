@@ -9,7 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 
-import com.massivecraft.factions.entity.MPlayer;
 import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
 
@@ -124,37 +123,6 @@ public class Chwho extends MineverseCommand {
 											continue;
 										}
 										else if(!(r.getTown().getNation().getName().equals(pp.getTown().getNation().getName()))) {
-											continue;
-										}
-									}
-								}
-								catch(Exception ex) {
-									ex.printStackTrace();
-								}
-							}
-							if(plugin.getConfig().getBoolean("enable_factions_channel") && pluginManager.isPluginEnabled("Factions") && sender instanceof Player) {
-								try {
-									if(channel.getName().equalsIgnoreCase("Faction")) {
-										MPlayer mplayer = MPlayer.get(p.getPlayer());
-										MPlayer mplayerp = MPlayer.get((Player) sender);
-										if(!mplayerp.hasFaction()) {
-											if(playerlist.length() + p.getName().length() > linecount) {
-												playerlist += "\n";
-												linecount = linecount + plugin.getLineLength();
-											}
-											if(!p.isMuted(channel.getName())) {
-												playerlist += ChatColor.WHITE + p.getName();
-											}
-											else {
-												playerlist += ChatColor.RED + p.getName();
-											}
-											playerlist += ChatColor.WHITE + ", ";
-											break;
-										}
-										else if(!mplayerp.hasFaction()) {
-											continue;
-										}
-										else if(!(mplayer.getFactionName().equals(mplayerp.getFactionName()))) {
 											continue;
 										}
 									}

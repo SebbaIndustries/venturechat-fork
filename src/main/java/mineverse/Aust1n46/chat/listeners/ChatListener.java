@@ -18,7 +18,6 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.PluginManager;
 
 import com.comphenix.protocol.events.PacketContainer;
-import com.massivecraft.factions.entity.MPlayer;
 import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
 
@@ -406,30 +405,6 @@ public class ChatListener implements Listener {
 								recipients.remove(p.getPlayer());
 								recipientCount--;
 								continue;
-							}
-						}
-					}
-					catch(Exception ex) {
-						ex.printStackTrace();
-					}
-				}
-
-				if(plugin.getConfig().getBoolean("enable_factions_channel") && pluginManager.isPluginEnabled("Factions")) {
-					try {
-						if(eventChannel.getName().equalsIgnoreCase("Faction")) {
-							MPlayer mplayer = MPlayer.get(mcp.getPlayer());
-							MPlayer mplayerp = MPlayer.get(p.getPlayer());
-							if(!mplayer.hasFaction()) {
-								recipients.remove(p.getPlayer());
-								recipientCount--;
-							}
-							else if(!mplayerp.hasFaction()) {
-								recipients.remove(p.getPlayer());
-								recipientCount--;
-							}
-							else if(!(mplayer.getFactionName().equals(mplayerp.getFactionName()))) {
-								recipients.remove(p.getPlayer());
-								recipientCount--;
 							}
 						}
 					}
